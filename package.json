@@ -9,11 +9,11 @@
   "scripts": {
     "install": "npm run install:client && npm run install:server",
     "install:client": "(cd ./front && npm install)",
-    "install:server": "(cd ./backend && npm install && npm run migrate)",
+    "install:server": "(cd ./backend && npm install && npm run migrate:server)",
     "postinstall":"npm run build",
     "build": "npm run build:client",
     "build:client": "(cd ./front && npm run build)",
-    "migrate": "ENV_SILENT=true node ace migration:run --force",
+    "migrate:server": "ENV_SILENT=true node ace migration:run --force",
     "start": "npm run start:prod",
     "start:prod": "(cd ./backend && ./node_modules/.bin/ts-node ./start/app.js)",
     "start:dev": "npm run start:client & npm run start:server",
