@@ -4,9 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "heroku-postbuild": "cd front && npm install --only=dev && npm install && npm run build"
+    "install": "npm run install:front && npm run install:backend",
+    "install:client": "(cd ./front && npm install)",
+    "install:server": "(cd ./backend && npm install)",
+    "postinstall":"npm run build",
+    "build": "npm run build:client",
+    "build:client": "(cd ./front && npm run build)",
+    "start": "npm run start:prod",
+    "start:prod": "(cd ./backend && ./node_modules/.bin/ts-node ./start/app.js)",
+    "start:dev": "npm run start:client & npm run start:server",
+    "start:client": "(cd ./front && npm run start)",
+    "start:server": "(cd ./backend && npm run start:watch)"
   },
   "repository": {
     "type": "git",
