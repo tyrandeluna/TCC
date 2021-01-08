@@ -15,7 +15,7 @@
     "start:dev": "npm run start:client & npm run start:server",
     "start:client": "(cd ./front && npm run start)",
     "start:server": "(cd ./backend && npm run start:watch)"
-  },
+  }, 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tyrandeluna/TCC.git"
