@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "npm run install:front && npm run install:backend",
+    "install": "npm run install:client && npm run install:server",
     "install:client": "(cd ./front && npm install)",
     "install:server": "(cd ./backend && npm install)",
     "postinstall":"npm run build",
