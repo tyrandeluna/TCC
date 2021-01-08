@@ -9,15 +9,12 @@
   "scripts": {
     "install": "npm run install:client && npm run install:server",
     "install:client": "(cd ./front && npm install)",
-    "install:server": "(cd ./backend && npm install)",
-    "postinstall":"npm run build",
-    "build": "npm run build:client",
-    "build:client": "(cd ./front && npm run build)",
-    "start": "npm run start:prod",
-    "start:prod": "(cd ./backend && ./node_modules/.bin/ts-node ./start/app.js)",
-    "start:dev": "npm run start:client & npm run start:server",
+    "install:server": "(cd ./backend && npm install && npm run migrate)",
+    "start": "npm run start:client && npm run start:back",
+    "start:back": "(cd ./backend && ENV_SILENT=true npm start)",
+    "migrate": "ENV_SILENT=true node ace migration:run --force",
     "start:client": "(cd ./front && npm run start)",
-    "start:server": "(cd ./backend && npm run start:watch)"
+    "start:dev": "npm run start:client & npm run start:back"
   },  
   "repository": {
     "type": "git",
