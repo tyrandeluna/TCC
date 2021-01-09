@@ -4,9 +4,6 @@
   "adonis-version": "4.1.0",
   "description": "Adonisjs boilerplate for API server with pre-configured JWT",
   "main": "index.js",
-  "engines": {
-    "node": "14.15.4"
-  },
   "scripts": {
     "start": "node server.js",
     "test": "node ace test"
